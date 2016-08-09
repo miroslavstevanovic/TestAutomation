@@ -1,4 +1,4 @@
-package lib;
+package library.data;
 
 public class Property {
 	

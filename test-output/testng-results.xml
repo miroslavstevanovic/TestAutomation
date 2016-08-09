@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18369" started-at="2016-08-03T12:21:17Z" finished-at="2016-08-03T12:21:36Z">
+  <suite name="Default suite" duration-ms="18420" started-at="2016-08-09T11:24:54Z" finished-at="2016-08-09T11:25:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18369" started-at="2016-08-03T12:21:17Z" finished-at="2016-08-03T12:21:36Z">
-      <class name="test.IVE">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:test.IVE@2fc14f68]" name="beforeClass" is-config="true" duration-ms="2538" started-at="2016-08-03T14:21:18Z" finished-at="2016-08-03T14:21:20Z">
+    <test name="Default test" duration-ms="18420" started-at="2016-08-09T11:24:54Z" finished-at="2016-08-09T11:25:12Z">
+      <class name="test.login.TNGAnnotations">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="beforeClass" is-config="true" duration-ms="5752" started-at="2016-08-09T13:24:54Z" finished-at="2016-08-09T13:24:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="f()[pri:0, instance:test.IVE@2fc14f68]" name="f" duration-ms="15822" started-at="2016-08-03T14:21:20Z" finished-at="2016-08-03T14:21:36Z">
+        <test-method status="PASS" signature="clearFields()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="clearFields" is-config="true" duration-ms="132" started-at="2016-08-09T13:24:59Z" finished-at="2016-08-09T13:24:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:test.IVE@2fc14f68]" name="afterClass" is-config="true" duration-ms="0" started-at="2016-08-03T14:21:36Z" finished-at="2016-08-03T14:21:36Z">
+        </test-method> <!-- clearFields -->
+        <test-method status="PASS" signature="NeuspesnoLogovanje()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="NeuspesnoLogovanje" duration-ms="1924" started-at="2016-08-09T13:24:59Z" finished-at="2016-08-09T13:25:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NeuspesnoLogovanje -->
+        <test-method status="PASS" signature="clearFields()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="clearFields" is-config="true" duration-ms="60" started-at="2016-08-09T13:25:01Z" finished-at="2016-08-09T13:25:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearFields -->
+        <test-method status="PASS" signature="NeuspesnoLogovanje1()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="NeuspesnoLogovanje1" duration-ms="1912" started-at="2016-08-09T13:25:01Z" depends-on-methods="test.login.TNGAnnotations.NeuspesnoLogovanje" finished-at="2016-08-09T13:25:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NeuspesnoLogovanje1 -->
+        <test-method status="PASS" signature="clearFields()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="clearFields" is-config="true" duration-ms="60" started-at="2016-08-09T13:25:03Z" finished-at="2016-08-09T13:25:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearFields -->
+        <test-method status="PASS" signature="UspesnoLogovanje()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="UspesnoLogovanje" duration-ms="8141" started-at="2016-08-09T13:25:03Z" depends-on-methods="test.login.TNGAnnotations.NeuspesnoLogovanje1" finished-at="2016-08-09T13:25:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UspesnoLogovanje -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:test.login.TNGAnnotations@591f989e]" name="afterClass" is-config="true" duration-ms="422" started-at="2016-08-09T13:25:12Z" finished-at="2016-08-09T13:25:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- test.IVE -->
+      </class> <!-- test.login.TNGAnnotations -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

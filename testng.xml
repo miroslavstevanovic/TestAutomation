@@ -2,10 +2,12 @@
   
 <suite name="test" verbose="1" >
   <test name="one script" >
-    <classes>
-       <class name="test.IVE"/>
-                      
-    </classes>
+  
+  <packages>
+  	<package name= "test" />
+  	</packages>
+    <!--classes>
+       <class name="test.IVE"/>                    
+    </classes-->
   </test>
- 
 </suite>
