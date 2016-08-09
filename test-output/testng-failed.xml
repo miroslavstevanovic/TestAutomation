@@ -3,16 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="test.login.TNGAnnotations">
+      <class name="test.cdd.CheckBoxFunctionality">
         <methods>
           <include name="beforeClass"/>
-          <include name="NeuspesnoLogovanje"/>
-          <include name="clearFields"/>
-          <include name="NeuspesnoLogovanje1"/>
-          <include name="UspesnoLogovanje"/>
+          <include name="login"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- test.login.TNGAnnotations -->
+      </class> <!-- test.cdd.CheckBoxFunctionality -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

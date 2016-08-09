@@ -19,54 +19,67 @@ public class TNGAnnotations {
 
 	@BeforeClass
 	public void beforeClass() {
-		System.out.println("Before Class");
+		System.out.println("***BeforeClass***");
 		driver = new FirefoxDriver();
 		loginPage = new LoginPage(driver);
 	}
 
 	@BeforeMethod
 	public void clearFields() {
-		System.out.println("Before Method");
+		System.out.println("***BeforeMethod***");
 		loginPage.clearUsernameAndPasswordFields();
 	}
 
-	@Test(dependsOnMethods = "NeuspesnoLogovanje", groups = "Login")
+	@Test(dependsOnMethods = "NeuspesnoLogovanje")
 	public void NeuspesnoLogovanje1() {
-		System.out.println("Test: NeuspesnoLogovanje1()");
-		loginPage.typeUsername(Property.username);
-		loginPage.typePassword("fdsffs");
-		loginPage.clickOnLoginButtonInvalidData();
-		String errorMessage = loginPage.getErrorMessage();
-		System.out.println(errorMessage);
-		assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
-		System.out.println("Test passed");
+		try {
+			System.out.println("Test: NeuspesnoLogovanje1");
+			loginPage.typeUsername(Property.username);
+			loginPage.typePassword("fdsffs");
+			loginPage.clickOnLoginButtonInvalidData();
+			String errorMessage = loginPage.getErrorMessage();
+			System.out.println(errorMessage);
+			assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
+			System.out.println("***Test: NeuspesnoLogovanje1 - PASSED***");
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
-	@Test()
+	@Test(groups = {"login"})
 	public void NeuspesnoLogovanje() {
-		System.out.println("Test: NeuspesnoLogovanje()");
-		loginPage.typeUsername("nenad");
-		loginPage.typePassword(Property.password);
-		loginPage.clickOnLoginButtonInvalidData();
-		String errorMessage = loginPage.getErrorMessage();
-		System.out.println(errorMessage);
-		assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
-		System.out.println("Test passed");
+		try {
+			System.out.println("***Test: NeuspesnoLogovanje***");
+			loginPage.typeUsername("nenad");
+			loginPage.typePassword(Property.password);
+			loginPage.clickOnLoginButtonInvalidData();
+			String errorMessage = loginPage.getErrorMessage();
+			System.out.println(errorMessage);
+			assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
+			System.out.println("***Test: NeuspesnoLogovanje - PASSED***");
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	@Test(dependsOnMethods = "NeuspesnoLogovanje1")
 	public void UspesnoLogovanje() {
-		System.out.println("Test: UspesnoLogovanje");
-		loginPage.typeUsername(Property.username).typePassword(Property.password);
-		homePage = loginPage.clickOnLoginButton();
-		String message = homePage.getTextFromLoginInfoLabel();
-		System.out.println(message);
-		assert message.contains("You are logged in as") : "You are not logged in. Test Failed.";
+		try {
+			System.out.println("***Test: UspesnoLogovanje***");
+			loginPage.typeUsername(Property.username).typePassword(Property.password);
+			homePage = loginPage.clickOnLoginButton();
+			String message = homePage.getTextFromLoginInfoLabel();
+			System.out.println(message);
+			assert message.contains("You are logged in as") : "You are not logged in. Test Failed.";
+			System.out.println("***Test: UspesnoLogovanje - PASSED***");
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		System.out.println("Usao u after class");
+		System.out.println("***AfterClass***");
 		driver.quit();
 	}
 

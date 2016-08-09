@@ -3,9 +3,17 @@
 <suite name="test" verbose="1" >
   <test name="one script" >
   
+  <!--groups>
+    <run>
+      <include name="checkbox" />
+    </run>
+  </groups-->
+  
   <packages>
-  	<package name= "test" />
-  	</packages>
+  	<package name= "test.cdd"/>
+  </packages>
+  	
+  	
     <!--classes>
        <class name="test.IVE"/>                    
     </classes-->
