@@ -1,11 +1,6 @@
 package library.util;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 public class Verification {
-
-	protected static final Log log = LogFactory.getLog("seleniumTestSuite");
 
 	private static final String VERIFICATION = 	"------------------------------ VERIFICATION ------------------------------";
 	private static final String TITLE = 		"\tTitle:    ";
@@ -16,15 +11,15 @@ public class Verification {
 
 	private static void print(String expected, String actual, String title, boolean result) {
 
-		log.debug(VERIFICATION);
-		log.debug(TITLE + title);
-		log.debug(EXPECTED + expected);
-		log.debug(ACTUAL + actual);
+		System.out.println(VERIFICATION);
+		System.out.println(TITLE + title);
+		System.out.println(EXPECTED + expected);
+		System.out.println(ACTUAL + actual);
 		if (result) 
-			log.debug(RESULT + "Passed");
+			System.out.println(RESULT + "Passed");
 		else 
-			log.debug(RESULT + "Failed");
-		log.debug(END);
+			System.out.println(RESULT + "Failed");
+		System.out.println(END);
 		assert result;
 
 	}
@@ -40,7 +35,7 @@ public class Verification {
 	 *            title
 	 */
 	public static void verifyString(String expected, String actual, String title) {
-		boolean b = expected.equals(actual);
+		boolean b = actual.contains(expected);
 		print(expected, actual, title, b);
 	}
 

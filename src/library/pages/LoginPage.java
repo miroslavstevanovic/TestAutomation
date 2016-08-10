@@ -3,11 +3,10 @@ package library.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import library.data.Property;
 
-public class LoginPage {
+public class LoginPage extends Page{
 	
 	@FindBy(id = "username")
 	private WebElement usernameInputField;
@@ -21,13 +20,12 @@ public class LoginPage {
 	@FindBy(className = "error")
 	private WebElement errorLabel;
 	
-	private WebDriver driver;
+	//private WebDriver driver;
 	
-	public LoginPage(WebDriver driver){		
-		this.driver = driver;
+	public LoginPage(WebDriver driver){
+		super(driver);
 		driver.manage().window().maximize();
 		driver.get(Property.URL);
-		PageFactory.initElements(driver, this);		
 	}
 	
 	/**

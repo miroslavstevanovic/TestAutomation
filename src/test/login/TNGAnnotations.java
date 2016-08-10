@@ -4,12 +4,15 @@ import org.testng.annotations.Test;
 import library.data.Property;
 import library.pages.HomePage;
 import library.pages.LoginPage;
+import library.util.Verification;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
+//@Test(groups = {"login"})
 public class TNGAnnotations {
 
 	private static WebDriver driver;
@@ -17,7 +20,7 @@ public class TNGAnnotations {
 	LoginPage loginPage;
 	HomePage homePage;
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void beforeClass() {
 		System.out.println("***BeforeClass***");
 		driver = new FirefoxDriver();
@@ -55,7 +58,8 @@ public class TNGAnnotations {
 			loginPage.clickOnLoginButtonInvalidData();
 			String errorMessage = loginPage.getErrorMessage();
 			System.out.println(errorMessage);
-			assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
+			Verification.verifyString("Invalid login, please try agai", errorMessage, "Verify invalid login.");
+			//assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
 			System.out.println("***Test: NeuspesnoLogovanje - PASSED***");
 		} catch (Exception e) {
 			throw e;
@@ -70,7 +74,7 @@ public class TNGAnnotations {
 			homePage = loginPage.clickOnLoginButton();
 			String message = homePage.getTextFromLoginInfoLabel();
 			System.out.println(message);
-			assert message.contains("You are logged in as") : "You are not logged in. Test Failed.";
+			Verification.verifyString("You are logged in as", message, "Logged in");
 			System.out.println("***Test: UspesnoLogovanje - PASSED***");
 		} catch (Exception e) {
 			throw e;

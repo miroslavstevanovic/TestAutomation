@@ -1,5 +1,6 @@
 package library.util;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,8 +19,25 @@ public class Wait {
 	 *            {int}
 	 */
 	public static void untilWebElementVisible(WebDriver driver, WebElement webElement, int time) {
+		System.out.println("Wait.untilWebElementVisible(driver, webElement,"+ time +")");
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(webElement));
+	}
+
+	/**
+	 * Wait until web element become visible.
+	 * 
+	 * @param driver
+	 *            {WebDriver}
+	 * @param byWebElement
+	 *            {By}
+	 * @param time
+	 *            {int}
+	 */
+	public static void untilWebElementVisible(WebDriver driver, By byWebElement, int time) {
+		WebElement element = driver.findElement(byWebElement);
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	/**
