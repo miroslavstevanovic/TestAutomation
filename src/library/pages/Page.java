@@ -39,7 +39,6 @@ public class Page {
 	 */
 	public void waitForPageToBeLoaded(WebDriver driver, By byWebElement, int time){	
 		System.out.println("waitForPageToBeLoaded(driver, webElement,"+ time +")");
-		//Wait.untilWebElementClickable(driver, webElement, time);
 		WebElement identifierElement = null;
 		long baseTime = System.currentTimeMillis() + (time * 1000);
 		// Trenutak ulaska u metodu [System.currentTimeMillis() - vraca trenutno vreme u milisekundama] uvecan za time * 1000 (milisekunde)
@@ -49,7 +48,6 @@ public class Page {
 			try {			
 				identifierElement = driver.findElement(byWebElement);
 				b = true;
-				System.out.println(b);
 			} catch (Exception e) {
 			}
 			Wait.untilWebElementVisible(driver, identifierElement, time);
