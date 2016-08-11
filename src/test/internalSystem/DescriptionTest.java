@@ -35,7 +35,7 @@ public class DescriptionTest {
 
 		try {
 			System.out.println("---Before Class");
-			driver = Prepare.getChromeDriver();
+			driver = Prepare.chromeDriver();
 			
 			System.out.println("---Step: Open login page");
 			loginPage = new LoginPage(driver);

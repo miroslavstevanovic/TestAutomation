@@ -27,7 +27,7 @@ public class TNGAnnotations {
 		try {
 			
 			System.out.println("***BeforeClass***");
-			driver = Prepare.getChromeDriver();
+			driver = Prepare.chromeDriver();
 			
 		} catch (Exception e) {
 			throw e;

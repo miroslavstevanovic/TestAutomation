@@ -30,7 +30,7 @@ public class CheckBoxFunctionality {
 	@BeforeClass
 	public void beforeClass() {
 
-		driver = Prepare.getChromeDriver();
+		driver = Prepare.chromeDriver();
 		System.out.println("Step: Go to app url.");
 		loginPage = new LoginPage(driver);
 	}
@@ -99,7 +99,7 @@ public class CheckBoxFunctionality {
 		if (isCheckd) {
 			try {
 				System.out.println("AfterClass: Revert to default.");
-				driver = Prepare.getChromeDriver();
+				driver = Prepare.chromeDriver();
 				loginPage = new LoginPage(driver);
 				loginPage.typeUsername(Property.username).typePassword(Property.password);
 				homePage = loginPage.clickOnLoginButton();

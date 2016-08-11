@@ -7,6 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="NeuspesnoLogovanje"/>
+          <include name="clearFields"/>
           <include name="NeuspesnoLogovanje1"/>
           <include name="UspesnoLogovanje"/>
           <include name="afterClass"/>
