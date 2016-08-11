@@ -19,7 +19,7 @@ public class Wait {
 	 *            {int}
 	 */
 	public static void untilWebElementVisible(WebDriver driver, WebElement webElement, int time) {
-		System.out.println("Wait.untilWebElementVisible(driver, webElement,"+ time +")");
+		System.out.println("Wait.untilWebElementVisible(driver, webElement," + time + ")");
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(webElement));
 	}
@@ -53,5 +53,20 @@ public class Wait {
 	public static void untilWebElementClickable(WebDriver driver, WebElement webElement, int time) {
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.elementToBeClickable(webElement));
+	}
+
+	/**
+	 * Wait until web element become present
+	 * 
+	 * @param driver
+	 *            {WebDriver}
+	 * @param by
+	 *            {By}
+	 * @param time
+	 *            {int}
+	 */
+	public static void untilWebElementPresent(WebDriver driver, By by, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
 	}
 }

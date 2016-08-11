@@ -20,8 +20,6 @@ public class LoginPage extends Page{
 	@FindBy(className = "error")
 	private WebElement errorLabel;
 	
-	//private WebDriver driver;
-	
 	public LoginPage(WebDriver driver){
 		super(driver);
 		driver.manage().window().maximize();

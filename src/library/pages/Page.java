@@ -13,6 +13,10 @@ public class Page {
 	@FindBy(className = "logininfo")
 	private WebElement loginInfoLabel;
 	
+	@FindBy(linkText = "Log out")
+	private WebElement logOutLink;
+
+	
 	protected WebDriver driver; 
 	/* obratite paznju na protected rec - omogucava svim kalasama koje nasledjuju ovu da kroiste driver,
 	 * tako da im njihov atribut private WebDriver driver; vise ne treba.
@@ -29,6 +33,12 @@ public class Page {
 	 */
 	public String getTextFromLoginInfoLabel(){
 		return loginInfoLabel.getText();
+	}
+	
+	public LoginPage clickOnLogOutLink(){
+		logOutLink.click();
+		return new LoginPage(driver);
+		
 	}
 	
 	/**

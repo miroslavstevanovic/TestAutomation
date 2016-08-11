@@ -22,28 +22,41 @@ public class TNGAnnotations {
 
 	@BeforeClass(alwaysRun = true)
 	public void beforeClass() {
-		System.out.println("***BeforeClass***");
-		driver = new FirefoxDriver();
+		try {
+			
+			System.out.println("***BeforeClass***");
+			driver = new FirefoxDriver();
+			
+		} catch (Exception e) {
+			throw e;
+		}
 		loginPage = new LoginPage(driver);
 	}
 
 	@BeforeMethod
 	public void clearFields() {
-		System.out.println("***BeforeMethod***");
-		loginPage.clearUsernameAndPasswordFields();
+		try {
+			
+			System.out.println("***BeforeMethod***");
+			loginPage.clearUsernameAndPasswordFields();
+			
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	@Test(dependsOnMethods = "NeuspesnoLogovanje")
 	public void NeuspesnoLogovanje1() {
 		try {
+			
 			System.out.println("Test: NeuspesnoLogovanje1");
 			loginPage.typeUsername(Property.username);
 			loginPage.typePassword("fdsffs");
 			loginPage.clickOnLoginButtonInvalidData();
 			String errorMessage = loginPage.getErrorMessage();
-			System.out.println(errorMessage);
-			assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
+			Verification.verifyString(Property.errorLogin, errorMessage, "Verify invalid login");
 			System.out.println("***Test: NeuspesnoLogovanje1 - PASSED***");
+			
 		} catch (Exception e) {
 			throw e;
 		}
@@ -52,15 +65,15 @@ public class TNGAnnotations {
 	@Test(groups = {"login"})
 	public void NeuspesnoLogovanje() {
 		try {
+			
 			System.out.println("***Test: NeuspesnoLogovanje***");
 			loginPage.typeUsername("nenad");
 			loginPage.typePassword(Property.password);
 			loginPage.clickOnLoginButtonInvalidData();
 			String errorMessage = loginPage.getErrorMessage();
-			System.out.println(errorMessage);
-			Verification.verifyString("Invalid login, please try agai", errorMessage, "Verify invalid login.");
-			//assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
+			Verification.verifyString(Property.errorLogin, errorMessage, "Verify invalid login");
 			System.out.println("***Test: NeuspesnoLogovanje - PASSED***");
+			
 		} catch (Exception e) {
 			throw e;
 		}

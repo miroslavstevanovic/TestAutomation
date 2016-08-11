@@ -15,7 +15,7 @@ import org.testng.annotations.AfterClass;
 
 public class CheckBoxFunctionality {
 
-	private static WebDriver driver;
+	private WebDriver driver;
 
 	boolean b = false;
 	boolean isCheckd = false;
@@ -24,7 +24,6 @@ public class CheckBoxFunctionality {
 	HomePage homePage;
 	SearchResultPage searchResultPage;
 	CDDPage cddPage;
-
 	String message;
 
 	@BeforeClass
@@ -33,7 +32,6 @@ public class CheckBoxFunctionality {
 		driver = new FirefoxDriver();
 		System.out.println("Step: Go to app url.");
 		loginPage = new LoginPage(driver);
-
 	}
 
 	@Test(groups = {"checkbox"})
@@ -124,9 +122,5 @@ public class CheckBoxFunctionality {
 		} else {
 			System.out.println("Test failed");
 		}
-
-		
-
 	}
-
 }
