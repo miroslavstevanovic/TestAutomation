@@ -4,11 +4,13 @@ import org.testng.annotations.Test;
 import library.data.Property;
 import library.pages.HomePage;
 import library.pages.LoginPage;
+import library.util.Prepare;
 import library.util.Verification;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
@@ -25,7 +27,7 @@ public class TNGAnnotations {
 		try {
 			
 			System.out.println("***BeforeClass***");
-			driver = new FirefoxDriver();
+			driver = Prepare.getChromeDriver();
 			
 		} catch (Exception e) {
 			throw e;

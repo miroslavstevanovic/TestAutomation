@@ -7,6 +7,7 @@ import library.pages.CDDPage;
 import library.pages.HomePage;
 import library.pages.LoginPage;
 import library.pages.SearchResultPage;
+import library.util.Prepare;
 
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,7 @@ public class CheckBoxFunctionality {
 	@BeforeClass
 	public void beforeClass() {
 
-		driver = new FirefoxDriver();
+		driver = Prepare.getChromeDriver();
 		System.out.println("Step: Go to app url.");
 		loginPage = new LoginPage(driver);
 	}
@@ -98,7 +99,7 @@ public class CheckBoxFunctionality {
 		if (isCheckd) {
 			try {
 				System.out.println("AfterClass: Revert to default.");
-				driver = new FirefoxDriver();
+				driver = Prepare.getChromeDriver();
 				loginPage = new LoginPage(driver);
 				loginPage.typeUsername(Property.username).typePassword(Property.password);
 				homePage = loginPage.clickOnLoginButton();

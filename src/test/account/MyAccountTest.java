@@ -8,6 +8,7 @@ import library.pages.HomePage;
 import library.pages.LoginPage;
 import library.pages.MyProfilePage;
 import library.pages.SearchResultPage;
+import library.util.Prepare;
 import library.util.Verification;
 
 import org.testng.annotations.BeforeClass;
@@ -29,7 +30,7 @@ public class MyAccountTest {
 	public void beforeClass() {	
 		try {
 			System.out.println("---Before Class");
-			driver = new FirefoxDriver();
+			driver = Prepare.getChromeDriver();
 			
 			System.out.println("---Step: Open login page");
 			loginPage = new LoginPage(driver);

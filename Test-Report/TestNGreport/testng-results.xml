@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="test" duration-ms="91193" started-at="2016-08-10T10:05:50Z" finished-at="2016-08-10T10:07:21Z">
+  <suite name="test" duration-ms="34679" started-at="2016-08-11T12:35:16Z" finished-at="2016-08-11T12:35:51Z">
     <groups>
       <group name="checkbox">
-        <method signature="CheckBoxFunctionality.login()[pri:0, instance:test.cdd.CheckBoxFunctionality@2d6d8735]" name="login" class="test.cdd.CheckBoxFunctionality"/>
+        <method signature="CheckBoxFunctionality.login()[pri:0, instance:test.cdd.CheckBoxFunctionality@18ef96]" name="login" class="test.cdd.CheckBoxFunctionality"/>
       </group> <!-- checkbox -->
     </groups>
-    <test name="one script" duration-ms="91193" started-at="2016-08-10T10:05:50Z" finished-at="2016-08-10T10:07:21Z">
+    <test name="one script" duration-ms="34679" started-at="2016-08-11T12:35:16Z" finished-at="2016-08-11T12:35:51Z">
       <class name="test.cdd.CheckBoxFunctionality">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:test.cdd.CheckBoxFunctionality@2d6d8735]" name="beforeClass" is-config="true" duration-ms="5449" started-at="2016-08-10T12:05:50Z" finished-at="2016-08-10T12:05:55Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:test.cdd.CheckBoxFunctionality@18ef96]" name="beforeClass" is-config="true" duration-ms="5401" started-at="2016-08-11T14:35:16Z" finished-at="2016-08-11T14:35:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="login()[pri:0, instance:test.cdd.CheckBoxFunctionality@2d6d8735]" name="login" duration-ms="52465" started-at="2016-08-10T12:05:55Z" finished-at="2016-08-10T12:06:48Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:test.cdd.CheckBoxFunctionality@18ef96]" name="login" duration-ms="14733" started-at="2016-08-11T14:35:21Z" finished-at="2016-08-11T14:35:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:test.cdd.CheckBoxFunctionality@2d6d8735]" name="afterClass" is-config="true" duration-ms="33270" started-at="2016-08-10T12:06:48Z" finished-at="2016-08-10T12:07:21Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:test.cdd.CheckBoxFunctionality@18ef96]" name="afterClass" is-config="true" duration-ms="14536" started-at="2016-08-11T14:35:36Z" finished-at="2016-08-11T14:35:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
