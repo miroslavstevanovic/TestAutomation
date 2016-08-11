@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import library.data.Property;
+import library.util.Wait;
 
 public class HomePage extends Page {
 
@@ -31,6 +32,7 @@ public class HomePage extends Page {
 	private WebElement internalSystemSelfHelpLink;
 
 	private By goBtn = new ByXPath("//input[contains(@value, 'Go') and contains(@type, 'submit')]");
+	private By bySearchInputField = new By.ById("shortsearchbox");
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -56,6 +58,7 @@ public class HomePage extends Page {
 	 */
 	public HomePage typeSearchValueIntoSearchField(String value) {
 		System.out.println("typeSearchValueIntoSearchField(" + value + ")");
+		Wait.untilWebElementPresent(driver, bySearchInputField, Property.TIME_SHORT);
 		searchInputField.sendKeys(value);
 		return this;
 	}
