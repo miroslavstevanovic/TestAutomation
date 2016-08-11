@@ -6,12 +6,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Prepare {
 	
+	/**
+	 * Get firefox driver
+	 * @return {WebDriver}
+	 */
 	public static WebDriver getFirefoxDriver(){
 		return new FirefoxDriver();		
 	}
 	
+	/**
+	 * Get chrome driver
+	 * @return {WebDriver}
+	 */
 	public static WebDriver getChromeDriver(){
 		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+		// To enable chrome driver we need to define chromedriver.exe file location
 		return new ChromeDriver();		
 	}
 
